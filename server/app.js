@@ -21,6 +21,6 @@ app.use(express.static('server/public'));
 app.use('/', index);
 
 //LISTEN
-app.listen(app.get('port'), function()){
+app.listen(app.get('port'), function(){
   console.log('Listening on port: ', app.get('port'));
-}
+});

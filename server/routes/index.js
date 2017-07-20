@@ -4,7 +4,7 @@ var path = require('path');
 
 //BASE ROUTE
 router.get('/', function(req,res){
-  res.sendFile(path.resolve('serve/public/views/index.html'));
+  res.sendFile(path.resolve('server/public/views/index.html'));
 });
 
 module.exports = router;
