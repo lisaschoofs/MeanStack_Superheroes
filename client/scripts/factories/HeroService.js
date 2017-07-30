@@ -5,7 +5,7 @@ myApp.factory('HeroService', ['$http', '$location', function($http, $location){
   var heroList = {};
 
   //gets all heroes from the database
-  function getLessons() {
+  function getHeroes() {
     $http.get('/hero').then(function(response){
       heroList.heroes = response.data;
     });
@@ -13,6 +13,6 @@ myApp.factory('HeroService', ['$http', '$location', function($http, $location){
 
   return {
     getHeroes: getHeroes,
-    heroList: heroList    
+    heroList: heroList
   };
 }]);

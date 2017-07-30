@@ -12,10 +12,13 @@
     <script type="text/javascript" src="vendors/angular/angular.min.js"></script>
     <script type="text/javascript" src="vendors/angular-route/angular-route.min.js"></script>
     <script type="text/javascript" src="scripts/client.min.js"></script>
+    
   </head>
   <body>
-    <div class=container>
+    <header ng-include="'/views/partials/header.html'"></header>
+    <main ng-view></main>
+    <!-- <div class=container>
       <p>Hello!</p>
-    </div>
+    </div> -->
   </body>
 </html>

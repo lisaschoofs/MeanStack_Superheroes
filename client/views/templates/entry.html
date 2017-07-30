@@ -1,1 +1,41 @@
-<h1>entry html</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>entry html</h1>
+
+<!-- form for hero submittal -->
+      <form ng-submit="addHero(hero)">
+
+        <div class="form-group">
+          <label for="alias">Super Hero Name</label>
+          <input class="form-control" ng-model="hero.alias">
+        </div>
+
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input class="form-control" ng-model="hero.firstName">
+        </div>
+
+        <div class="form-group">
+          <label for="lastName">Last Name</label>
+          <input class="form-control" ng-model="hero.lastName">
+        </div>
+
+        <div class="form-group">
+          <label for="city">Hero's City</label>
+          <input class="form-control" ng-model="hero.city">
+        </div>
+
+<!-- NEED TO ADD LIST FROM DB OF SUPER POWERS -->
+        <div class="form-group">
+            <label for="powers">Super Power</label>
+            <select class="form-control" ng-model="hero.power"
+                    ng-options="power for power in powerList">
+            </select>
+        </div>
+
+        <input class="btn btn-info" type="submit" name="hero.submit" value="Add Hero"/>
+      </form>
+    </div>
+  </div>
+</div>
