@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 
 //ROUTE MODULES
 var index = require('./routes/index.js');
+var heroes = require('./routes/heroes.js');
 
 //APP CONFIG
 app.set('port', (process.env.PORT || 5000));
