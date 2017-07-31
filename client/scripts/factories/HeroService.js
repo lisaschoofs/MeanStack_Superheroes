@@ -9,7 +9,8 @@ myApp.factory('HeroService', ['$http', '$location', function($http, $location){
     $http.get('/hero').then(function(response){
       heroList.heroes = response.data;
     });
-  }
+  };
+
 
   return {
     getHeroes: getHeroes,
