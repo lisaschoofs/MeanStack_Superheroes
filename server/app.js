@@ -4,11 +4,23 @@ var app = express();
 var path = require('path');
 var bodyParser = require('body-parser');
 
-//ADD DB MODULE LATER
+//Database Variables
+var mongoose = require("mongoose");
+var mongoURI = "mongodb://localhost:27017/heroes";
+var MongoDB = mongoose.connect(mongoURI).connection;
 
 //ROUTE MODULES
-var index = require('./routes/index.js');
-var heroes = require('./routes/heroes.js');
+var index = require('./routes/index');
+var heroes = require('./routes/heroes');
+
+MongoDB.on("error", function(err){
+  console.log("Mongo Connection Error :" + err);
+});
+
+
+MongoDB.once("open", function(){
+  console.log("MongoDB is connected! Good Work!");
+});
 
 //APP CONFIG
 app.set('port', (process.env.PORT || 5000));
@@ -19,6 +31,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('server/public'));
 
 //ROUTES
+app.use('/heroes', heroes);
 app.use('/', index);
 
 //LISTEN

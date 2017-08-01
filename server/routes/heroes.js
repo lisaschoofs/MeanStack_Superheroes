@@ -14,7 +14,7 @@ var PowerSchema = mongoose.Schema({
   power_name: String
 });
 
-// var Heroes = mongoose.model();
+var Heroes = mongoose.model("Heroes", HeroSchema);
 // var SuperPowers = mongoose.model();
 
 //GET heroes
@@ -31,7 +31,8 @@ router.get('/'), function(req,res){
 };
 
 router.post('/'), function(req,res){
-  var Hero = new Hero();
+  console.log('made it to post!');
+  var Hero = new Heroes();
   console.log('logging req.body: ', req.body);
   Hero.save(function(err, savedHero){
   if(err){

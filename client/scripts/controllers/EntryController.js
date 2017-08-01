@@ -1,5 +1,7 @@
 myApp.controller('EntryController', ['$http', '$location', 'HeroService', '$scope', function($http, $location, HeroService, $scope){
 
+  HeroService.getHeroes();
+
   //object to store values from form
   $scope.hero = {};
 
@@ -8,7 +10,7 @@ myApp.controller('EntryController', ['$http', '$location', 'HeroService', '$scop
     console.log('logging hero: ', hero);
     $http.post('/heroes', hero).then(function(response){
       console.log('back from the server with success!', response);
-      alert('you added a hero to the list!');
+      $location.path('/listings');
       });
     };
 
