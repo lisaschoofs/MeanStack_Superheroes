@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+// var path = require('path');
 var mongoose = require('mongoose');
 
 var HeroSchema = mongoose.Schema({
@@ -19,13 +20,13 @@ var Heroes = mongoose.model("Heroes", HeroSchema);
 
 //GET heroes
 router.get('/'), function(req,res){
-
+  console.log('in get heroes');
   Heroes.find(function(err, allHerores){
     if(err){
       console.log(err);
       res.sendStatus(500);
     }
-    // console.log(allHeroes);
+    console.log('logging heroes: ', allHeroes);
     res.send(allHeroes);
   });
 };
